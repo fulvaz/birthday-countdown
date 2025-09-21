@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div data-id="hi">
+        <%= htmlWebpackPlugin.options.data.hi %>
+    </div>
+    <div>
+        <label for="language-select">选择语言：</label>
+        <select id="language-select" name="language">
+            <option value="en">en</option>
+            <option value="es">es</option>
+            <option value="fr">fr</option>
+            <option value="de">de</option>
+            <option value="ja">ja</option>
+            <option value="zh">zh</option>
+            <option value="ar">ar</option>
+            <option value="pt">pt</option>
+            <option value="ru">ru</option>
+            <option value="ko">ko</option>
+        </select>
+    </div>
+    <div data-id="welcome"></div>
+    <div data-id="language"></div>
+</body>
+</html>
