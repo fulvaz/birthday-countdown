@@ -10,6 +10,15 @@ class I18nManager {
     this.supportedLanguages = options.supportedLanguages || ['en', 'es', 'fr', 'de', 'ja', 'zh', 'ar', 'pt', 'ru', 'ko'];
     this.languageImports = options.languageImports || {}; // 语言导入映射
   }
+  
+  /**
+   * 获取所有可用的语言文件名（不含扩展名）
+   * @returns {Array} - 语言文件名数组
+   */
+  getLanguageFilenames() {
+    // 返回支持的语言列表，这些就是i18n目录下的文件名（不含扩展名）
+    return this.supportedLanguages;
+  }
 
   /**
    * 初始化国际化管理器
