@@ -1,5 +1,6 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const fs = require("fs");
 
 const filenames = fs.readdirSync(path.resolve(__dirname, "src/i18n"));
@@ -60,7 +61,23 @@ module.exports = {
     open: true,
     historyApiFallback: true,
   },
+  module: {
+    rules: [
+      {
+        test: /\.css$/,
+        use: [
+          MiniCssExtractPlugin.loader,
+          'css-loader'
+        ],
+      },
+    ],
+  },
   plugins: [
+    // 抽取CSS为独立文件以利用缓存
+    new MiniCssExtractPlugin({
+      filename: '[name].[contenthash].css',
+      chunkFilename: '[id].[contenthash].css',
+    }),
     // 第一个HTML页面
     new HtmlWebpackPlugin({
       template: "./src/index.ejs",

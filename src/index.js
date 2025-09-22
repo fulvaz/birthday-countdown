@@ -1,4 +1,5 @@
 import { I18nManager } from './i18n-manager';
+import './styles.css';
 
 // 创建语言导入映射
 const languageImports = {

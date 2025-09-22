@@ -1,0 +1,42 @@
+/* 
+ * Birthday Countdown Tool - Main Styles
+ * Modern tech-inspired design with gradients
+ */
+
+:root {
+  --primary-color: #4776E6;
+  --secondary-color: #8E54E9;
+  --text-color: #333;
+  --light-text: #fff;
+  --background-color: #7e7e7e;
+  --card-bg: #ffffff;
+  --border-radius: 8px;
+  --box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  --transition: all 0.3s ease;
+  --max-width: 1000px;
+}
+
+/* RTL support for Arabic */
+[lang="ar"] {
+  direction: rtl;
+  text-align: right;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: var(--text-color);
+  background-color: var(--background-color);
+  line-height: 1.6;
+}
+
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 20px;
+}
