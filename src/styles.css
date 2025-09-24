@@ -386,6 +386,48 @@ button:hover {
   padding: 30px;
 }
 
+/* Language Links Section */
+.language-links {
+  margin-bottom: 60px;
+  background-color: var(--card-bg);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 40px;
+  text-align: center;
+}
+
+.language-links h2 {
+  margin-bottom: 30px;
+  color: var(--primary-color);
+  font-size: 1.8rem;
+}
+
+.language-flags {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+}
+
+.lang-link {
+  display: inline-block;
+  padding: 10px 15px;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  text-decoration: none;
+  border-radius: var(--radius);
+  transition: var(--transition);
+  border: 1px solid var(--border-color);
+  font-weight: 500;
+}
+
+.lang-link:hover {
+  background-color: var(--primary-color);
+  color: var(--light-text);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
 .about-tool h2, .birthday-facts h2 {
   margin-bottom: 20px;
   color: var(--primary-color);
