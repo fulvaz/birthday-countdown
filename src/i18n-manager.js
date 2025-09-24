@@ -25,10 +25,10 @@ class I18nManager {
    */
   init() {
     // 从localStorage获取保存的语言设置
-    const savedLanguage = localStorage.getItem('selectedLanguage');
-    if (savedLanguage && this.supportedLanguages.includes(savedLanguage)) {
-      this.currentLanguage = savedLanguage;
-    }
+    // const savedLanguage = localStorage.getItem('selectedLanguage');
+    // if (savedLanguage && this.supportedLanguages.includes(savedLanguage)) {
+    //   this.currentLanguage = savedLanguage;
+    // }
 
     // 加载当前语言
     return this.loadLanguage(this.currentLanguage);

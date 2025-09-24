@@ -1,19 +1,21 @@
-/* 
- * Birthday Countdown Tool - Main Styles
- * Modern tech-inspired design with gradients
- */
+/* Birthday Countdown Tool - Modern Design */
 
 :root {
-  --primary-color: #4776E6;
-  --secondary-color: #8E54E9;
-  --text-color: #333;
-  --light-text: #fff;
-  --background-color: #7e7e7e;
-  --card-bg: #ffffff;
-  --border-radius: 8px;
-  --box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  --primary-color: #5D5FEF;
+  --primary-hover: #4B4DDB;
+  --secondary-color: #FF7A50;
+  --text-color: #2D3748;
+  --light-text: #F7FAFC;
+  --muted-text: #718096;
+  --bg-color: #F8F9FA;
+  --card-bg: #FFFFFF;
+  --border-color: #E2E8F0;
+  --gradient-start: #5D5FEF;
+  --gradient-end: #8C5CF2;
+  --shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --radius: 12px;
   --transition: all 0.3s ease;
-  --max-width: 1000px;
+  --max-width: 1200px;
 }
 
 /* RTL support for Arabic */
@@ -29,14 +31,466 @@
 }
 
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   color: var(--text-color);
-  background-color: var(--background-color);
-  line-height: 1.6;
+  background-color: var(--bg-color);
+  line-height: 1.7;
+  font-size: 16px;
 }
 
 .container {
   max-width: var(--max-width);
   margin: 0 auto;
+  padding: 0 24px;
+  width: 100%;
+}
+
+header {
+  background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+  color: var(--light-text);
+  padding: 18px 0;
+  box-shadow: var(--shadow);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.language-selector {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  max-width: var(--max-width);
+  margin: 0 auto;
   padding: 0 20px;
+}
+
+.language-selector label {
+  margin-right: 10px;
+  color: var(--light-text);
+}
+
+select {
+  padding: 8px 12px;
+  border-radius: var(--border-radius);
+  border: none;
+  background-color: rgba(255, 255, 255, 0.2);
+  color: var(--light-text);
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+select:hover, select:focus {
+  background-color: rgba(255, 255, 255, 0.3);
+  outline: none;
+}
+
+/* Hero Section */
+.hero {
+  text-align: center;
+  padding: 80px 0 60px;
+  background: linear-gradient(135deg, var(--gradient-start) 0%, var(--gradient-end) 100%);
+  color: var(--light-text);
+  margin-bottom: 50px;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23ffffff' fill-opacity='0.1' fill-rule='evenodd'/%3E%3C/svg%3E");
+  opacity: 0.5;
+}
+
+.hero h1 {
+  font-size: 3.5rem;
+  font-weight: 800;
+  margin-bottom: 20px;
+  letter-spacing: -0.5px;
+  position: relative;
+}
+
+.hero p {
+  font-size: 1.3rem;
+  max-width: 650px;
+  margin: 0 auto;
+  opacity: 0.9;
+  position: relative;
+}
+
+/* Countdown Tool Section */
+.countdown-tool {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 40px;
+  margin-bottom: 60px;
+  background-color: var(--card-bg);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 40px;
+  position: relative;
+  overflow: hidden;
+}
+
+@media (min-width: 768px) {
+  .countdown-tool {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.date-selector h2,
+.countdown-display h2 {
+  margin-bottom: 20px;
+  color: var(--primary-color);
+}
+
+.calendar-type-toggle {
+  display: flex;
+  margin-bottom: 20px;
+  background-color: #f0f0f0;
+  border-radius: var(--border-radius);
+  overflow: hidden;
+}
+
+.calendar-type-toggle label {
+  flex: 1;
+  text-align: center;
+  padding: 10px;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.calendar-type-toggle input {
+  display: none;
+}
+
+.calendar-type-toggle input:checked + span {
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  color: var(--light-text);
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+}
+
+.date-inputs {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.date-field label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: 500;
+}
+
+.date-field select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: var(--border-radius);
+  background-color: white;
+  color: var(--text-color);
+}
+
+.birthday-name {
+  margin-bottom: 20px;
+}
+
+.birthday-name label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: 500;
+}
+
+.birthday-name input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: var(--border-radius);
+}
+
+button {
+  background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+  color: white;
+  border: none;
+  padding: 14px 24px;
+  border-radius: var(--radius);
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 1rem;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  box-shadow: 0 4px 6px rgba(93, 95, 239, 0.25);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 7px 10px rgba(93, 95, 239, 0.3);
+}
+
+/* 倒计时显示样式 */
+.countdown-display {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin: 30px 0;
+}
+
+/* Countdown Display */
+.countdown-display {
+  text-align: center;
+}
+
+.countdown-timer {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+.countdown-unit {
+  background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+  color: white;
+  border-radius: var(--radius);
+  padding: 20px;
+  min-width: 120px;
+  text-align: center;
+  box-shadow: var(--shadow);
+  position: relative;
+  overflow: hidden;
+}
+
+.time-unit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 80px;
+}
+
+.time-value {
+  font-size: 3rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: block;
+  line-height: 1;
+}
+
+.time-label {
+  font-size: 0.9rem;
+  color: #777;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.countdown-message {
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin-bottom: 20px;
+  min-height: 30px;
+}
+
+/* Share Tools */
+.share-tools {
+  margin-top: 30px;
+  text-align: center;
+  grid-column: 1 / -1;
+}
+
+.share-tools h3 {
+  margin-bottom: 15px;
+  color: var(--primary-color);
+}
+
+.share-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.share-buttons button {
+  padding: 8px 15px;
+  font-size: 0.9rem;
+}
+
+/* Saved Countdowns */
+.saved-countdowns {
+  margin-bottom: 50px;
+  background-color: var(--card-bg);
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  padding: 30px;
+}
+
+.saved-countdowns h2 {
+  margin-bottom: 20px;
+  color: var(--primary-color);
+}
+
+.saved-events-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.saved-event-card {
+  background-color: #f5f5f5;
+  border-radius: var(--border-radius);
+  padding: 15px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+  transition: var(--transition);
+}
+
+.saved-event-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.saved-event-card h3 {
+  margin-bottom: 10px;
+  font-size: 1.1rem;
+}
+
+.saved-event-card p {
+  color: #666;
+  margin-bottom: 10px;
+  font-size: 0.9rem;
+}
+
+.saved-event-card .event-actions {
+  display: flex;
+  justify-content: space-between;
+}
+
+.saved-event-card button {
+  padding: 5px 10px;
+  font-size: 0.8rem;
+}
+
+/* About Tool Section */
+.about-tool, .birthday-facts {
+  margin-bottom: 50px;
+  background-color: var(--card-bg);
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  padding: 30px;
+}
+
+.about-tool h2, .birthday-facts h2 {
+  margin-bottom: 20px;
+  color: var(--primary-color);
+  text-align: center;
+}
+
+.about-content p, .facts-content p {
+  margin-bottom: 15px;
+}
+
+.facts-content {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+@media (min-width: 768px) {
+  .facts-content {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.fact-item {
+  padding: 15px;
+  background-color: #f5f5f5;
+  border-radius: var(--border-radius);
+  transition: var(--transition);
+}
+
+.fact-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.fact-item h3 {
+  margin-bottom: 10px;
+  color: var(--secondary-color);
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 20px;
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  color: var(--light-text);
+  margin-top: 50px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+  
+  .countdown-timer {
+    flex-wrap: wrap;
+  }
+  
+  .time-unit {
+    min-width: 70px;
+  }
+  
+  .time-value {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .date-inputs {
+    grid-template-columns: 1fr;
+  }
+  
+  .hero h1 {
+    font-size: 2rem;
+  }
+  
+  .time-unit {
+    min-width: 60px;
+  }
+  
+  .time-value {
+    font-size: 2rem;
+  }
+}
+
+/* Animation for countdown */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.time-value.highlight {
+  animation: pulse 1s infinite;
+}
+
+/* Language filenames container */
+.language-filenames {
+  margin-top: 10px;
+  font-size: 0.8rem;
+  opacity: 0.8;
 }

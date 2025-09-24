@@ -13,7 +13,7 @@ const htmlPlugins = supportedLanguages.map(
     new HtmlWebpackPlugin({
       template: "./src/index.ejs",
       filename: `${lang}.html`,
-      data: require(`./src/i18n/${lang}.js`).default,
+      data: require(`./src/i18n/${lang}.js`),
       // 添加预加载指令
       scriptLoading: "defer",
       preload: ["*.js"],

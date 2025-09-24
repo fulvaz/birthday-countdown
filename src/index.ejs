@@ -3,28 +3,154 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta name="description" data-id="meta_description" content="<%= htmlWebpackPlugin.options.data['meta_description'] %>">
+    <meta name="keywords" data-id="meta_keywords" content="<%= htmlWebpackPlugin.options.data['meta_keywords'] %>">
+    <title data-id="page_title"><%= htmlWebpackPlugin.options.data['page_title'] %></title>
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Birthday Countdown - Track Days Until Your Special Day">
+    <meta property="og:description" content="Free birthday countdown tool to track days until your birthday">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://example.com/birthday-countdown-preview.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Birthday Countdown Tool">
+    <meta name="twitter:description" content="Track days until your special celebration">
+    <!-- Schema.org markup for Google -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Birthday Countdown Tool",
+      "description": "Track days until birthdays and special events",
+      "applicationCategory": "UtilityApplication",
+      "operatingSystem": "All",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.8",
+        "ratingCount": "1024"
+      }
+    }
+    </script>
+    <script>
+        window.entryLang = "<%= htmlWebpackPlugin.options.data['lang'] %>";
+    </script>
 </head>
 <body>
-    <div data-id="hi">
-        <%= htmlWebpackPlugin.options.data.hi %>
-    </div>
-    <div>
-        <label for="language-select">选择语言：</label>
-        <select id="language-select" name="language">
-            <option value="en">en</option>
-            <option value="es">es</option>
-            <option value="fr">fr</option>
-            <option value="de">de</option>
-            <option value="ja">ja</option>
-            <option value="zh">zh</option>
-            <option value="ar">ar</option>
-            <option value="pt">pt</option>
-            <option value="ru">ru</option>
-            <option value="ko">ko</option>
-        </select>
-    </div>
-    <div data-id="welcome"></div>
-    <div data-id="language"></div>
+    <header>
+        <div class="language-selector">
+            <label for="language-select" data-id="language_selector_label"><%= htmlWebpackPlugin.options.data['language_selector_label'] %></label>
+            <select id="language-select">
+                <option value="en">English</option>
+                <option value="zh">中文</option>
+                <option value="es">Español</option>
+                <option value="fr">Français</option>
+                <option value="de">Deutsch</option>
+                <option value="ja">日本語</option>
+                <option value="ko">한국어</option>
+                <option value="ar">العربية</option>
+                <option value="pt">Português</option>
+                <option value="ru">Русский</option>
+            </select>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="hero">
+            <h1 data-id="main_title"><%= htmlWebpackPlugin.options.data['main_title'] %></h1>
+            <p data-id="main_subtitle"><%= htmlWebpackPlugin.options.data['main_subtitle'] %></p>
+        </section>
+
+        <section class="countdown-tool">
+            <div class="date-selector">
+                <h2 data-id="date_selector_title"><%= htmlWebpackPlugin.options.data['date_selector_title'] %></h2>
+                  
+                <div class="date-inputs">
+                    <div class="date-field">
+                        <label for="birthday-month" data-id="month_label"><%= htmlWebpackPlugin.options.data['month_label'] %></label>
+                        <select id="birthday-month" name="birthday-month">
+                            <!-- Will be populated by JavaScript -->
+                        </select>
+                    </div>
+                    <div class="date-field">
+                        <label for="birthday-day" data-id="day_label"><%= htmlWebpackPlugin.options.data['day_label'] %></label>
+                        <select id="birthday-day" name="birthday-day">
+                            <!-- Will be populated by JavaScript -->
+                        </select>
+                    </div>
+                    <div class="date-field">
+                        <label for="birthday-year" data-id="year_label"><%= htmlWebpackPlugin.options.data['year_label'] %></label>
+                        <select id="birthday-year" name="birthday-year">
+                            <!-- Will be populated by JavaScript -->
+                        </select>
+                    </div>
+                </div>
+                <!-- <div class="birthday-name">
+                    <label for="event-name" data-id="event_name_label"><%= htmlWebpackPlugin.options.data['event_name_label'] %>:</label>
+                    <input type="text" id="event-name" name="event-name" data-id="event_name_placeholder" placeholder="<%= htmlWebpackPlugin.options.data['event_name_placeholder'] %>">
+                </div> -->
+                <button id="calculate-btn" data-id="calculate_button"><%= htmlWebpackPlugin.options.data['calculate_button'] %></button>
+            </div>
+
+            <div class="countdown-display">
+                <h2 data-id="countdown_title"><%= htmlWebpackPlugin.options.data['countdown_title'] %></h2>
+                <div class="countdown-timer">
+                    <div class="time-unit">
+                        <span id="days" class="time-value">0</span>
+                        <span class="time-label" data-id="days_label"><%= htmlWebpackPlugin.options.data['days_label'] %></span>
+                    </div>
+                    <div class="time-unit">
+                        <span id="hours" class="time-value">0</span>
+                        <span class="time-label" data-id="hours_label"><%= htmlWebpackPlugin.options.data['hours_label'] %></span>
+                    </div>
+                    <div class="time-unit">
+                        <span id="minutes" class="time-value">0</span>
+                        <span class="time-label" data-id="minutes_label"><%= htmlWebpackPlugin.options.data['minutes_label'] %></span>
+                    </div>
+                    <div class="time-unit">
+                        <span id="seconds" class="time-value">0</span>
+                        <span class="time-label" data-id="seconds_label"><%= htmlWebpackPlugin.options.data['seconds_label'] %></span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+        <section class="about-tool">
+            <h2 data-id="about_title"><%= htmlWebpackPlugin.options.data['about_title'] %></h2>
+            <div class="about-content">
+                <p data-id="about_paragraph_1"><%= htmlWebpackPlugin.options.data['about_paragraph_1'] %></p>
+                <p data-id="about_paragraph_2"><%= htmlWebpackPlugin.options.data['about_paragraph_2'] %></p>
+                <p data-id="about_paragraph_3"><%= htmlWebpackPlugin.options.data['about_paragraph_3'] %></p>
+            </div>
+        </section>
+
+        <section class="birthday-facts">
+            <h2 data-id="facts_title"><%= htmlWebpackPlugin.options.data['facts_title'] %></h2>
+            <div class="facts-content">
+                <div class="fact-item">
+                    <h3 data-id="fact_1_title"><%= htmlWebpackPlugin.options.data['fact_1_title'] %></h3>
+                    <p data-id="fact_1_content"><%= htmlWebpackPlugin.options.data['fact_1_content'] %></p>
+                </div>
+                <div class="fact-item">
+                    <h3 data-id="fact_2_title"><%= htmlWebpackPlugin.options.data['fact_2_title'] %></h3>
+                    <p data-id="fact_2_content"><%= htmlWebpackPlugin.options.data['fact_2_content'] %></p>
+                </div>
+                <div class="fact-item">
+                    <h3 data-id="fact_3_title"><%= htmlWebpackPlugin.options.data['fact_3_title'] %></h3>
+                    <p data-id="fact_3_content"><%= htmlWebpackPlugin.options.data['fact_3_content'] %></p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p data-id="copyright"><%= htmlWebpackPlugin.options.data['copyright'] %></p>
+        <div id="language-filenames" class="language-filenames"></div>
+    </footer>
 </body>
 </html>
